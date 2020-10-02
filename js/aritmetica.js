@@ -7,7 +7,11 @@ function restar(a, b) {
   return a - b;
 }
 
+/*Se agrupan todas las funciones y las devuelves en un objeto */
+
 export const aritmetica = {
   sumar,
   restar
 };
+
+

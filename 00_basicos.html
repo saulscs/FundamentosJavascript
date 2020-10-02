@@ -12,23 +12,18 @@
   <script>
     /* **********     Curso JavaScript: 3. Variables: var 🥊VS🥊 let - #jonmircha     ********** */
 
-    /* var hola = "Hola Mundo";
+    /*/ var hola = "Hola Mundo";
     let hello = "Hello World";
     console.log(hola);
     console.log(hello);
     console.log(window);
     console.log(window.hola);
     console.log(window.hello); */
+    
     //Ambito de bloque
     //Esto es un bloque - comentario de una lines
-    /*
-    Esto
-    es
-    un
-    comentario
-    de
-    varias
-    líneas */
+    
+    
     /* console.log ("****************var*****************");
     var musica = "Rock";
     console.log("Variable Música antes del Bloque", musica);
@@ -36,7 +31,7 @@
       var musica = "Pop";
       console.log("Variable Música dentro del Bloque", musica);
     }
-    console.log("Variable Música después del Bloque", musica);
+    console.log("Variable Música después del Bloque", musica);œ∫
     console.log("****************let*****************");
     let musica2 = "Rock";
     console.log("Variable Música antes del Bloque", musica2);
@@ -278,8 +273,8 @@
 
 
     /* **********     Curso JavaScript: 11. Arreglos (Arrays) - #jonmircha     ********** */
-
-    /*     const a = [];
+/*
+         const a = [];
         const b = [1, true, "Hola", ["A", "B", "C", [1, 2, 3]]];
         console.log(a);
         console.log(b);
@@ -313,8 +308,8 @@
 
         colores.forEach(function (el, index) {
           console.log(`<li id="${index}">${el}</li>`);
-        }); */
-
+        }); 
+*/
 
 
 
@@ -581,6 +576,7 @@
       console.log(numeros[i]);
     }
 
+    //Variante for in  (propiedades de un objeto)
     const jon = {
       nombre: "Jon",
       apellido: "MirCha",
@@ -590,6 +586,8 @@
     for (const propiedad in jon) {
       console.log(`Key: ${propiedad}, Value: ${jon[propiedad]}`);
     }
+
+    //variante for of  (todos los elementos de un objeto)
 
     for (const elemento of numeros) {
       console.log(elemento);
@@ -750,7 +748,9 @@
     /* const saludar = () => console.log(`Hola`);
     saludar(); */
 
-    /* const saludar = nombre => console.log(`Hola ${nombre}`);
+    /* 
+      //esta sintaxis aplica cuando solo se pasa un parametro
+    const saludar = nombre => console.log(`Hola ${nombre}`);
     saludar("Irma");
  */
     /* const sumar = function (a, b) {
@@ -772,7 +772,7 @@
      const numeros = [1, 2, 3, 4, 5];
 
      numeros.forEach((el, index) => console.log(`${el} esta en la posición ${index}`));
-
+     
   */
     /*   function Perro() {
         console.log(this);
