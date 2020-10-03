@@ -142,6 +142,7 @@
 
     /* 11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120 */
       // const factorial = (number) => {
+        // if(!number) return console.log("Tienes que ingresar un numero");
       //   if(typeof number !== "number") return console.log("No es un numero");
 
       //   let aux =1;
@@ -179,37 +180,115 @@
 
 
     /* 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar */
-        // const parImpar = (numero) => {
-        //   if(typeof numero !== "number") return console.log("No es un numero");
+      // const parImpar = (numero) => {
+      //   if(typeof numero !== "number") return console.log("No es un numero");
     
-        //   if(numero %2 === 0){
-        //     console.log("%i es PAR", numero);
-        //   } else {
-        //     console.log("%i es IMPAR", numero);
-        //   }
-        // }
+      //   if(numero %2 === 0){
+      //     console.log("%i es PAR", numero);
+      //   } else {
+      //     console.log("%i es IMPAR", numero);
+      //   }
+      // }
 
-        // parImpar(29);
+      // parImpar(29);
 
 
     /* 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F */
+      // const grados = (grado, temp) =>{
+      //   if(!grado) return console.log("Tienes que ingresar un numero");
+      //   if(typeof grado !== "number") return console.log("No es un numero");
+      //   if(!temp) return console.log("Tienes que ingresar la temperatura C o F");
+      //   if(typeof temp !== "string") return console.log("No es texto lo que ingresaste");
+      //   if (temp !== 'C' && temp !=='F') return console.log("Debes ingresar C o F");
 
+      //   const c="c", f="f";
+      //   let gradosF, gradosC;
+
+      //   if(temp.toLowerCase() === c){
+      //     gradosF = (grado * 1.8) + 32;
+      //     return console.log(`${grado} Grados Celsius es Equivalente a ${gradosF} Fahrenheit`);
+      //   } else {
+      //     gradosC = (grado - 32)/1.8;
+      //     return console.log(`${grado} Grados Fahrenheit es Equivalente a ${gradosC} Celsius `);
+      //   }
+            
+
+      // }
+
+      // grados(24, "C");
+      // grados(32, "F");
 
 
     /* 15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10 */
+      // const conversion = (numero, base) => {
+      //   if(!numero) return console.log("Tienes que ingresar un numero");
+      //   if(!base) return console.log("Tienes que ingresar el numero base");
+      //   if(typeof numero !== "number" || typeof base !== "number") return console.log("No es un numero");
 
+      //   let aux = numero;
+      //   numero = numero.toString();
+      //   let sumador = 0,
+      //       exponente = 0,
+      //       numBinario = [],
+      //       i = numero.length;
+      //   switch(base){
+      //     case 2: 
+      //       while (i !==0){
+      //         if(numero[i-1] !==0){
+      //           sumador += Math.pow(2,exponente);
+      //           exponente ++;
+      //           i--;
+      //         }
+      //       }
+      //       console.log(`${numero} base 2 es -> ${sumador} base 10`)
+      //     break;
+      //     case 10: 
+      //       while (aux >= 2){
+      //         numBinario.push(aux %2);
+      //         aux = Math.floor(aux/2);
+      //     }
+      //     numBinario.push(aux);
+      //     console.log(`${numero} base 10 -> ${numBinario.reverse().join("")} base 2`);
+      //     break;
+      //     default:
+      //       console.error("Valor de vabe no permitido");
+      //       break;
+      //   }
+      // }
 
+      // conversion(100,2);
+      // conversion(143,10);
 
     /* 16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800 */
+        // const descuento = (precio, descuento) => {
+        // if(!precio) return console.log("Tienes que ingresar el precio a calcular");
+        //  if(!descuento) return console.log("Tienes que ingresar el descuento");
+        //  if(typeof precio !== "number" || typeof descuento !== "number") return console.log("No es un numero");
+        //   let NPR;
 
+        //   let aux = (precio * descuento) /100;
+        //   NPR = precio - aux;
+        //   return console.log(`De ${precio} con descuento es ${NPR}`);
 
+        // }
+
+        // descuento(1000,20);
 
     /* 17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020) */
+      // const tiempoTranscurrido = (fecha) => {
+      //   if(!fecha) return console.log("Tienes que ingresar una fecha");
+      //   if(!(fecha instanceof Date)) return ("El valor ingresado no es valido");
 
+      //   let tiempo = new Date().getTime() - fecha.getTime();
+      //   let tiempoActual = Math.floor(tiempo / (1000 * 60 * 60 * 24 *365));
+      //   console.log(`El tiempo que ha pasado es ${tiempoActual} años`);
+      // }
+
+      // tiempoTranscurrido(new Date(1984,4,23));
 
 
     /* 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5 */
-
+        
 
 
     /* 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero */
