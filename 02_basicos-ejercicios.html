@@ -40,6 +40,7 @@
 
 
     /* 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo */
+        
         // function repit(str,num){
         //   for(let i=0; i< num; i++){
         //     console.log(str);
@@ -49,30 +50,109 @@
 
     /* 5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH" */
 
+          // const invertir = (str) => {
+          //   (str)
+          //   ?console.log(str.split("").reverse().join(""))
+          //   :console.log("No hay cadena");
+          // }
+
+          // invertir("hola mundo");
+
+          //split dividimos la cadena y se guardan los caracteres en un array
+           //reverse es un metodo del array que invierte el array
+           //join es un prototupo de un array que justa todo y lo pone en una string
 
 
     /* 6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2 */
+           
+            // const repeticion = (text ,pal ) => {
+            //   if(!text) return console.log("Tienes que ingresar texto");
+            //   if(!pal) return console.log("Tienes que ingresar la palabra a buscar");
+            //   if(typeof text !== "string" || typeof pal !== "string") return console.log("Ingresa un texto válido.");
+              
+            //   let arr = text.split("");
+            //   let res = 0;
 
+            //   for (let i=0; i < arr.length; i++){
+            //     if(arr[i] === pal){
+            //       res++;
+            //     }
+            //   }
+            //   console.log(res);
+            // }
+            // repeticion("hola mundo mundo mundo","mundo"); 
 
 
     /* 7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true */
 
+            // const palindrome = (frase) => {
+            //   if(!frase) return console.log("Tienes que ingresar texto");
+            //   if(typeof frase !== "string") return console.log("Ingresa un texto válido para analizar.");
+
+            //   let str1 = frase.replace(/\s/g, "").toLowerCase();
+            //   let str2 = str1.split("").reverse().join("");
+
+            //   if(str1 === str2){
+            //     return console.log("Tu texto es un palindrome");
+            //   } else {
+            //     return console.log("Tu texto NO es palindrome");
+            //   }
+            // }
+
+            // palindrome("Salsas");
 
 
     /* 8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5 */
 
+              // const eliminarCaracter = (patron, caracter) =>{
+              //   if(!patron) return console.log("Tienes que ingresar texto");
+              //   if(!caracter) return console.log("Tienes que ingresar la palabra a buscar");
+              //   if(typeof patron !== "string" || typeof caracter !== "string") return console.log("Ingresa un texto válido.");
 
+              //   let eliminar = new RegExp(caracter, "g");
+                
+              //   return console.log(`Resultado: "${patron.replace(eliminar, "")}"`);
+              // } 
+
+              // eliminarCaracter("xyz1, xyz2, xyz3, xyz4 y xyz5","xyz");
 
     /* 9) Programa una función que obtenga un numero aleatorio entre 501 y 600 */
 
+                // const random = () => {
+                //   return console.log(Math.floor(Math.random() * (600 - 501 + 1) + 501));
+                //   ;
+                // }
+
+                // random();
 
 
     /* 10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true  */
+                  // const capicua = (numero) => {
+                  //   if(!numero) return console.log("Tienes que ingresar un numero");
+                  //   if(typeof numero !== "number") return console.log("No es un numero");
 
+                  //   return (numero == numero.toString().split("").reverse().join("")) 
+                  //   ? console.log(`${numero} es capicua`)
+                  //   : console.log(`${numero} NO es capicua`);
+
+                  // }
+
+                  // capicua(404);
 
 
     /* 11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120 */
+                    const factorial = (number) => {
+                      if(typeof number !== "number") return console.log("No es un numero");
 
+                      let aux =1;
+
+                      for(let i=1; i <= number; i++){
+                        aux *=i;
+                      }
+                      return console.log(aux);
+                    }
+
+                    factorial(5);
 
 
     /* 12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true */
