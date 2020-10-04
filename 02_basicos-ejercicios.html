@@ -288,15 +288,53 @@
 
 
     /* 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5 */
+        // const contarLetra = (cadena) => {
+        //   if(!cadena) return console.log("Tienes que ingresar una frase");
+        //   if(typeof cadena !== "string") return console.log("Lo que ingresaste no es un texto");
+
+        //   let vocales = 0,
+        //   consonante = 0;
+            
+        //   cadena = cadena.toLocaleLowerCase();
+
+        //   for(let letra of cadena){
+        //     if(/[aeiouáéíóúü]/.test(letra)) vocales++;
+        //     if(/[bcdfghjklmnñpqrstvwxyz]/.test(letra)) consonante++;
+        //   }
+        //   return console.log(`El texto "${cadena}" tiene ${vocales} y ${consonante} `);
+        // }
+
         
+        // contarLetra("hola mundo");
 
 
     /* 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero */
+       // const validaNombre = (nombre) => {
+      //   if(!nombre) return console.log("Tienes que ingresar un nombre");
+      //   if(typeof nombre !== "string") return console.log("El valor ingresado no es una cadena");
 
+      //   let expReg = /^[A-Za-zÑñÁáÉéÍíÓoÚu\s]+$/g.test(nombre);
 
+      //   return (expReg) 
+      //   ? console.log(`"${nombre}" es valido`)
+      //   : console.log(`"${nombre}" NO es valido`);
+      // }
+      // validaNombre("Saúl");
+      // validaNombre("Sauel");
 
     /* 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero */
+        const validarCorreo = (email) => {
+        if(!email) return console.log("Tienes que ingresar un nombre");
+        if(typeof email !== "string") return console.log("El valor ingresado no es una cadena");
 
+        let expReg = /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email);
+
+        return (expReg) 
+        ? console.log(`"${email}" es valido`)
+        : console.log(`"${email}" NO es valido`);
+      }
+      validarCorreo("saulgmail.com");
+      validarCorreo("saul3132213@yahoo.com");
 
 
     /* 21) Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25] */
