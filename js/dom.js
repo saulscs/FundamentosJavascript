@@ -57,7 +57,7 @@ console.log(document.querySelector(".card"));
 console.log(document.querySelectorAll(".card"));
 console.log(document.querySelectorAll(".card")[2]);
 console.log(document.querySelector("#menu li"));
-console.log(document.querySelectorAll("#menu li")); */
+console.log(document.querySelectorAll("#menu li")); 
 /*
 
 
@@ -104,7 +104,7 @@ console.log($linkDOM.hasAttribute("data-id")); */
 
 */
 /* **********     Curso JavaScript: 64. DOM: Estilos y Variables CSS - #jonmircha     ********** */
-/* const $linkDOM = document.querySelector(".link-dom");
+/*const $linkDOM = document.querySelector(".link-dom");
 
 console.log($linkDOM.style);
 console.log($linkDOM.getAttribute("style"));
@@ -127,7 +127,7 @@ console.log($linkDOM.getAttribute("style"));
 console.log(getComputedStyle($linkDOM));
 
 //Variables CSS - Custom Properties CSS
-const $html = document.documentElement,
+const $html = document.documentElement,  // $ -> variables que almacena referencia en el DOM
   $body = document.body;
 
 let varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color"),
@@ -141,7 +141,7 @@ $body.style.color = varYellowColor;
 $html.style.setProperty("--dark-color", "#000");
 varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
 
-$body.style.setProperty("background-color", varDarkColor); */
+$body.style.setProperty("background-color", varDarkColor);  */
 /*
 
 

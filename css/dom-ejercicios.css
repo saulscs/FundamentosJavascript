@@ -83,12 +83,12 @@ video {
   opacity: 0;
   visibility: hidden;
   transition: transform 0.3s ease, opacity 0.5s ease;
-  /* De arriba */
-  transform: translate(0, -100%);
-  /* De abajo */
-  transform: translate(0, 100%);
-  /* De la derecha */
-  transform: translate(100%, 0);
+  /* De arriba 
+  transform: translate(0, -100%); */
+  /* De abajo 
+  transform: translate(0, 100%); */
+  /* De la derecha 
+  transform: translate(100%, 0); */
   /* De la izquierda */
   transform: translate(-100%, 0);
 }
