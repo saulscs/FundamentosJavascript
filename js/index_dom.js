@@ -2,14 +2,18 @@
 import hamburguerMenu from './dom/menu_hamburguesa.js';
 import {digitalClock, alarm} from './dom/reloj.js';
 
-/*Menu Hamburguesa*/
+/*Constante global*/
 const d = document;
 
 
 
-/*Menu Hamburguesa*/
+
 d.addEventListener("DOMContentLoaded", e => {
+    /*Menu Hamburguesa*/
     hamburguerMenu(".panel-btn", ".panel",".menu a");
+    /*Reloj digital */
     digitalClock("#reloj","#activar-reloj", "#desactivar-reloj");
+     /*Reloj digital */
+    alarm("assets/alarma.mp3", "#activar-alarma", "#desactivar-alarma");
 });
   
