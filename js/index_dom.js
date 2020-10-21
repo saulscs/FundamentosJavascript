@@ -8,6 +8,9 @@ import darkTheme from './dom/tema_oscuro.js'
 import responsiveMedia from './dom/objeto_responsive.js';
 import responsiveTester from './dom/prueba_responsive.js';
 import userDeviceInfo from './dom/deteccion_dispositivos.js';
+import networkStatus from './dom/deteccion_red.js';
+
+
 
 /*Constante global*/
 const d = document;
@@ -50,4 +53,8 @@ d.addEventListener("keydown", e => {
     moveBall(e, ".ball", ".stage");
 });
 
+/*Dark Theme */
 darkTheme(".dark-theme-btn","dark-mode");  //No se puede ejecutar el mismo evento dentro de uno similar por eso lo sacamos de DOMContentLoaded
+
+/*Deteccion de red */
+networkStatus();
