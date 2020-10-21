@@ -9,6 +9,7 @@ import responsiveMedia from './dom/objeto_responsive.js';
 import responsiveTester from './dom/prueba_responsive.js';
 import userDeviceInfo from './dom/deteccion_dispositivos.js';
 import networkStatus from './dom/deteccion_red.js';
+import WebCam from './dom/deteccion_webcam.js';
 
 
 
@@ -45,6 +46,8 @@ d.addEventListener("DOMContentLoaded", e => {
     /*Deteccion de dispositivos */
     responsiveTester("responsive-tester");
     userDeviceInfo("user-device");
+    /*Detección de web camp */
+    WebCam("webcam");
 });
   
 
