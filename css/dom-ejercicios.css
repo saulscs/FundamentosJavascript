@@ -253,7 +253,7 @@ video {
 }
 
 .filter {
-  /* display: none; */
+  /* display: none;  No es animable por eso combiene mejor usar visibility*/
   visibility: hidden;
   opacity: 0;
   order: 1;
