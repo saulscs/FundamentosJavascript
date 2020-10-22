@@ -13,6 +13,7 @@ import WebCam from './dom/deteccion_webcam.js';
 import getGeolocation from './dom/geolocalizacion.js';
 import searchFilter from './dom/filtros_busqueda.js';
 import draw from './dom/sorteo.js';
+import slider from './dom/carrusel.js';
 
 
 
@@ -56,7 +57,9 @@ d.addEventListener("DOMContentLoaded", e => {
     /*Filtro de busqueda */
     searchFilter(".card-filter",".card");
     /* Sorteo*/
-    draw("#winner-btn", ".player")
+    draw("#winner-btn", ".player");
+    /*Slider */
+    slider();
 });
   
 

@@ -270,7 +270,7 @@ video {
 
 .slider-slides {
   position: relative;
-  height: 400px;
+  height: 300px;
 }
 
 .slider-slide {
@@ -289,6 +289,7 @@ video {
   width: inherit;
   object-fit: cover;
   object-position: 50% 0%;
+  border-radius: 50px;
 }
 
 .slider-slide.active {
@@ -311,9 +312,7 @@ video {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  border: thin solid #000;
   text-decoration: none;
-  background-color: #fff;
   color: #000;
   transition: all 0.3s ease;
 }
