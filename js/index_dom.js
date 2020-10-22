@@ -12,6 +12,7 @@ import networkStatus from './dom/deteccion_red.js';
 import WebCam from './dom/deteccion_webcam.js';
 import getGeolocation from './dom/geolocalizacion.js';
 import searchFilter from './dom/filtros_busqueda.js';
+import draw from './dom/sorteo.js';
 
 
 
@@ -54,6 +55,8 @@ d.addEventListener("DOMContentLoaded", e => {
     getGeolocation("geolocation");
     /*Filtro de busqueda */
     searchFilter(".card-filter",".card");
+    /* Sorteo*/
+    draw("#winner-btn", ".player")
 });
   
 
