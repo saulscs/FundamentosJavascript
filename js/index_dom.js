@@ -14,6 +14,7 @@ import getGeolocation from './dom/geolocalizacion.js';
 import searchFilter from './dom/filtros_busqueda.js';
 import draw from './dom/sorteo.js';
 import slider from './dom/carrusel.js';
+import scrollSpy from './dom/scroll_espia.js';
 
 
 
@@ -60,6 +61,8 @@ d.addEventListener("DOMContentLoaded", e => {
     draw("#winner-btn", ".player");
     /*Slider */
     slider();
+    /*Scrool spy */
+    scrollSpy();
 });
   
 

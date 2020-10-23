@@ -321,13 +321,15 @@ video {
   color: #4d4d4d;
 }
 
+
+
 /* **********     ScrollSpy     ********** */
 @media screen and (min-width: 1024px) {
   body {
     display: grid;
     grid-template-columns: 80% 20%;
     grid-template-rows: 4rem auto;
-    grid-template-areas:
+    grid-template-areas:  
       "header header"
       "main panel";
   }
