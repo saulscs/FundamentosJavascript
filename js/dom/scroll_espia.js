@@ -10,7 +10,7 @@ export default function scrollSpy(){
         
         entries.forEach((entry)=>{
             const id = entry.target.getAttribute("id");
-            console.log(id)
+            // console.log(id)
             if(entry.isIntersecting){
                 d.querySelector(`a[data-scroll-spy][href="#${id}"]`).classList.add("active")
             }else{
@@ -24,7 +24,7 @@ export default function scrollSpy(){
         threshold: [0.5,0.75],
     });
 
-    console.log(observer)
+    // console.log(observer)
 
     $sections.forEach(el => observer.observe(el));
 }
