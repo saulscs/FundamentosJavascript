@@ -17,6 +17,7 @@ import slider from './dom/carrusel.js';
 import scrollSpy from './dom/scroll_espia.js';
 import smartVideo from './dom/video_inteligente.js';
 import contactFormValidations from './dom/validaciones_formulario.js';
+import speechReader from './dom/narrador.js';
 
 
 /*Constante global*/
@@ -68,6 +69,7 @@ d.addEventListener("DOMContentLoaded", e => {
     smartVideo();
     /*Contact form */
     contactFormValidations();
+    
 });
   
 
@@ -81,3 +83,7 @@ darkTheme(".dark-theme-btn","dark-mode");  //No se puede ejecutar el mismo event
 
 /*Deteccion de red */
 networkStatus();
+
+/*Speech reader */
+
+speechReader();
