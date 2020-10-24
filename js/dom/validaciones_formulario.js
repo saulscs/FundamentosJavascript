@@ -37,6 +37,22 @@ export default function contactFormValidations(){
             
         }
     })
+    /* **********     Curso JavaScript: 103. DOM: Ejercicios Prácticos | Envío de Formularios - #jonmircha     ********** */
+    d.addEventListener("submit", (e)=>{
+        // e.preventDefault();
+        alert("Enviando");
+        const $loader = d.querySelector(".contact-form-loader"),
+            $reponse = d.querySelector(".contact-form-response");
+        
+        $loader.classList.remove("none");
+
+        setTimeout(()=>{
+            $loader.classList.add("none");
+            $reponse.classList.remove("none");
+            $form.reset();
+
+            setTimeout(()=>$reponse.classList.add("none"),2000)
+        },2000)
+    })
 }
 
-/* **********     Curso JavaScript: 103. DOM: Ejercicios Prácticos | Envío de Formularios - #jonmircha     ********** */
