@@ -53,7 +53,8 @@
       $form = d.querySelector(".crud-form"),
       $title = d.querySelector(".crud-title"),
       $template = d.getElementById("crud-template").content,
-      $fragment = d.createDocumentFragment();
+      $fragment = d.createDocumentFragment(),
+      URL_API = "http://localhost:3000";
 
     const ajax = (options) => {
       let { url, method, success, error, data } = options;
@@ -78,7 +79,7 @@
 
     const getAll = () => {
       ajax({
-        url: "http://localhost:5555/santos",
+        url: `${URL_API}/santos`,
         success: (res) => {
           console.log(res);
 
@@ -112,7 +113,7 @@
         if (!e.target.id.value) {
           //Create - POST
           ajax({
-            url: "http://localhost:5555/santos",
+            url: `${URL_API}/santos`,
             method: "POST",
             success: (res) => location.reload(),
             error: (err) => $form.insertAdjacentHTML("afterend", `<p><b>${err}</b></p>`),
@@ -124,7 +125,7 @@
         } else {
           //Update - PUT
           ajax({
-            url: `http://localhost:5555/santos/${e.target.id.value}`,
+            url: `${URL_API}/santos/${e.target.id.value}`,
             method: "PUT",
             success: (res) => location.reload(),
             error: (err) => $form.insertAdjacentHTML("afterend", `<p><b>${err}</b></p>`),
@@ -151,7 +152,7 @@
         if (isDelete) {
           //Delete - DELETE
           ajax({
-            url: `http://localhost:5555/santos/${e.target.dataset.id}`,
+            url: `${URL_API}/santos/${e.target.dataset.id}`,
             method: "DELETE",
             success: (res) => location.reload(),
             error: (err) => alert(err)

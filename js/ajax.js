@@ -3,11 +3,11 @@
   const xhr = new XMLHttpRequest(),
     $xhr = document.getElementById("xhr"),
     $fragment = document.createDocumentFragment();
+  //console.log(xhr);
 
   xhr.addEventListener("readystatechange", (e) => {
     if (xhr.readyState !== 4) return;
-
-    //console.log(xhr);
+    
 
     if (xhr.status >= 200 && xhr.status < 300) {
       //console.log("éxito");
@@ -83,7 +83,7 @@
 
       //console.log(res, json);
 
-      //if (!res.ok) throw new Error("Ocurrio un Error al solicitar los Datos");
+      //if (!res.ok) throw new Error("Ocurrio un Error al solicitar los Datos"); //Este objeto solo revise mensajes textuales
       if (!res.ok) throw { status: res.status, statusText: res.statusText };
 
       json.forEach((el) => {
@@ -114,7 +114,7 @@
     //.get("assets/users.json")
     .get("https://jsonplaceholder.typicode.com/users")
     .then((res) => {
-      //console.log(res);
+      console.log(res);
       let json = res.data;
 
       json.forEach((el) => {
