@@ -390,7 +390,7 @@ video {
   width: 80%;
 }
 
-.contact-form > * {
+.contact-form > * {  /*Todos los elementos hijos de contact-form*/
   padding: 0.5rem;
   margin: 1rem auto;
   display: block;

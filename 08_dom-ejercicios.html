@@ -223,12 +223,13 @@
           title="El Asunto es requerido" 
           required
           >
+           <!--data-pattern es una validacion propia, textarea no tiene un patron por defecto-->
         <textarea 
           name="comments" 
           rows="5" 
           placeholder="Escribe tus comentarios"
           title="Tu comentario no debe exceder los 255 caracteres" 
-          data-pattern="^.{1,255}$" 
+          data-pattern="^.{1,255}$"
           required></textarea>
         <input type="submit" value="Enviar">
         <div class="contact-form-loader none">
