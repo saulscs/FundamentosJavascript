@@ -53,11 +53,12 @@
       $form = d.querySelector(".crud-form"),
       $title = d.querySelector(".crud-title"),
       $template = d.getElementById("crud-template").content,
-      $fragment = d.createDocumentFragment();
+      $fragment = d.createDocumentFragment(),
+      URL_API = "http://localhost:3000"
 
     const getAll = async () => {
       try {
-        let res = await fetch("http://localhost:5555/santos"),
+        let res = await fetch(`${URL_API}/santos`),
           json = await res.json();
 
         if (!res.ok) throw { status: res.status, statusText: res.statusText };
@@ -101,7 +102,7 @@
                 constelacion: e.target.constelacion.value
               })
             },
-              res = await fetch("http://localhost:5555/santos", options),
+              res = await fetch(`${URL_API}/santos`, options),
               json = await res.json();
 
             if (!res.ok) throw { status: res.status, statusText: res.statusText };
@@ -124,7 +125,7 @@
                 constelacion: e.target.constelacion.value
               })
             },
-              res = await fetch(`http://localhost:5555/santos/${e.target.id.value}`, options),
+              res = await fetch(`${URL_API}/santos/${e.target.id.value}`, options),
               json = await res.json();
 
             if (!res.ok) throw { status: res.status, statusText: res.statusText };
@@ -158,7 +159,7 @@
                 "Content-type": "application/json; charset=utf-8"
               }
             },
-              res = await fetch(`http://localhost:5555/santos/${e.target.dataset.id}`, options),
+              res = await fetch(`${URL_API}/santos/${e.target.dataset.id}`, options),
               json = await res.json();
 
             if (!res.ok) throw { status: res.status, statusText: res.statusText };

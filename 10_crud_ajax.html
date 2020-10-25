@@ -11,11 +11,19 @@
   <h1>CRUD API REST AJAX</h1>
   <section class="crud">
     <article>
-      <h2 class="crud-title">Agregar Santo</h2>
+      <h2 class="crud-title">Agregar Santo | SAINT SEIYA</h2>
       <form class="crud-form">
-        <input type="text" name="nombre" placeholder="nombre" required>
+        <input 
+          type="text" 
+          name="nombre" 
+          placeholder="nombre" 
+          required>
         <br>
-        <input type="text" name="constelacion" placeholder="constelación" required>
+        <input 
+          type="text"
+          name="constelacion" 
+          placeholder="constelación" 
+          required>
         <br>
         <input type="submit" value="Enviar">
         <input type="hidden" name="id">
@@ -62,7 +70,7 @@
 
       xhr.addEventListener("readystatechange", e => {
         if (xhr.readyState !== 4) return;
-
+      
         if (xhr.status >= 200 && xhr.status < 300) {
           let json = JSON.parse(xhr.responseText);
           success(json);
