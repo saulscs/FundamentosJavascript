@@ -39,12 +39,50 @@
 
 <body>
   <main>
-    <input type="file" id="files" name="files" multiple>
+  <h1>MAMP Server</h1>
+    <input 
+      type="file" 
+      id="files" 
+      name="files" 
+      multiple/>
   </main>
   <script>
     /* **********     Curso JavaScript: 124. Ejercicios AJAX - APIs: Uploader con AJAX - #jonmircha     ********** */
+    const d = document,
+      $main = d.querySelector("main"),
+      $files = d.getElementById("files");
+
+    const uploader = (file) => {
+      console.log(file);
+      const xhr = new XMLHttpRequest(), 
+      formData = new FormData();
+      formData.append("file", file);
+      xhr.addEventListener("readystatechange", e => {
+        if(xhr.readyState !== 4) return;
+
+        if(xhr.status >= 200 && xhr.status < 300){
+          let json = JSON.parse(xhr.responseText);
+          console.log(json);
+        } else{
+          let message = xhr.statusText || "Ocurrio un error";
+          console.log(`Error ${xhr.status}: ${xhr.message}`);
+        }
+      });
+      xhr.open("POST", "assets/uploader.php");
+      xhr.setRequestHeader("enc-type", "multipart/form-data");
+      xhr.send(formData);
+
+    }
+
+    d.addEventListener("change", e => {
+      if(e.target === $files){
+        console.log(e.target.files);
+
+        const files = Array.from(e.target.files);
+        files.forEach(el => {uploader(el)})
+      }
+    })
     /* **********     Curso JavaScript: 125. Ejercicios AJAX - APIs: Uploader AJAX con Barra de Progreso - #jonmircha     ********** */
   </script>
 </body>
-
 </html>
