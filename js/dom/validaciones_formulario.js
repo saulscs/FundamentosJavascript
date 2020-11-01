@@ -39,7 +39,7 @@ export default function contactFormValidations(){
     })
     /* **********     Curso JavaScript: 103. DOM: Ejercicios Prácticos | Envío de Formularios - #jonmircha     ********** */
     d.addEventListener("submit", (e)=>{
-        // e.preventDefault();
+         e.preventDefault();
         alert("Enviando");
         const $loader = d.querySelector(".contact-form-loader"),
             $reponse = d.querySelector(".contact-form-response");
