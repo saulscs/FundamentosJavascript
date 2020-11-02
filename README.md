@@ -28,3 +28,16 @@ Los archivos se tienen que guardar en la carpeta htdocs y correr el servidor, qu
 
 https://formsubmit.co/
 
+
+## Stripe 
+
+Para usar Stripe se crea un archivo stripe-keys.js 
+donde se colocan las llaves. 
+
+```
+export default {
+  public: "Your Public Key", 
+  secret: "Your Secret Key",
+};
+
+```
