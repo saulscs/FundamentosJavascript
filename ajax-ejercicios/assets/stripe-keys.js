@@ -1,4 +1,4 @@
 export default {
-  public: "Your Public Key",
+  public: "Your Public Key", 
   secret: "Your Secret Key",
 };
