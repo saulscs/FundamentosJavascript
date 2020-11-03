@@ -1,6 +1,7 @@
 # FUNDAMENTOS DE JAVASCRIPT
 
-## Comando para levantar un servidor local y simular un backend: 
+
+## Comando para levantar un servidor local y simular un backend 
 
 Install JSON Server 
 
