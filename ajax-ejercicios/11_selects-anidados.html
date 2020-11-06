@@ -31,6 +31,62 @@
     https://api-sepomex.hckdrk.mx/
     https://api-sepomex.hckdrk.mx/documentacion/docs
   */
+
+  const d = document,
+  $selectPrimary = d.getElementById("select-primary"),
+  $selecSecondary = d.getElementById("select-secondary"),
+  $selecThird = d.getElementById("select-third");
+
+  function loadStates(){
+    fetch("https://api-sepomex.hckdrk.mx/query/get_estados")
+    .then(res => res.ok ? res.json(): Promise.reject(res))
+    .then(json => {
+      // console.log(json);
+      let $options = `<option value="">Elige un estado</option>`;
+        json.response.estado.forEach(el => $options += `<option value="${el}">${el}</option>`);
+        $selectPrimary.innerHTML = $options;
+    })
+    .cath(err => {
+      let message = err.statusText || "Ocurrio un error";
+      $selectPrimary.nextElementSibling.innerHTML = `Error ${err.status}: ${message}`;
+
+    })
+  }
+
+  function loadTowns(state){
+    fetch(`https://api-sepomex.hckdrk.mx/query/get_municipio_por_estado/${state}`)
+    .then(res => res.ok ? res.json(): Promise.reject(res))
+    .then(json => {
+      let $options = `<option value="">Elige un municipio </option>`;
+        json.response.municipios.forEach(el => $options += `<option value="${el}">${el}</option>`);
+        $selecSecondary.innerHTML = $options;
+    })
+    .cath(err => {
+      let message = err.statusText || "Ocurrio un error";
+      $selecSecondary.nextElementSibling.innerHTML = `Error ${err.status}: ${message}`;
+    })
+  }
+
+  function loadSuburs(suburb){
+    fetch(`https://api-sepomex.hckdrk.mx/query/get_colonia_por_municipio/${suburb}`)
+    .then(res => res.ok ? res.json(): Promise.reject(res))
+    .then(json => {
+      let $options = `<option value="">Elige una colonia </option>`;
+        json.response.colonia.forEach(el => $options += `<option value="${el}">${el}</option>`);
+        $selecThird.innerHTML = $options;
+    })
+    .cath(err => {
+      let message = err.statusText || "Ocurrio un error";
+      $selecThird.nextElementSibling.innerHTML = `Error ${err.status}: ${message}`;
+    })
+  }
+
+
+
+  d.addEventListener("DOMContentLoaded",loadStates);
+
+  $selectPrimary.addEventListener("change", e =>loadTowns(e.target.value));
+  $selecSecondary.addEventListener("change", e => loadSuburs(e.target.value));
   </script>
 </body>
 
