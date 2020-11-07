@@ -124,16 +124,64 @@
   <script>
     /* ********** Curso JavaScript: 139. WordPress REST API y Fetch (1 / 5) - #jonmircha ********** 
     https://developer.wordpress.org/rest-api/reference/posts/*/
-    
-    fetch("https://malvestida.com/wp-json/wp/v2/posts")
-    .then(res => res.ok ? res.json() : Promise.reject(res))
-    .then(json => {
-      console.log(json);
-    });
     /* ********** Curso JavaScript: 140. WordPress REST API y Fetch (2 / 5) - #jonmircha ********** */
     /* ********** Curso JavaScript: 141. WordPress REST API y Fetch (3 / 5) - #jonmircha ********** */
     /* ********** Curso JavaScript: 142. WordPress REST API y Fetch (4 / 5) - #jonmircha ********** */
     /* ********** Curso JavaScript: 143. WordPress REST API & Infinite Scroll (5 / 5) - #jonmircha ********** */
+
+    const d = document,
+      $site = d.getElementById("site"),
+      $post = d.getElementById("posts"),
+      $loader = d.querySelector(".loader"),
+      $template = d.getElementById("post-template").content,
+      $fragment = d.createDocumentFragment(),
+      DOMAIN = "https://malvestida.com",
+      SITE = `${DOMAIN}/wp-json`,
+      API_WP = `${SITE}/wp/v2`,
+      POST = `${API_WP}/posts`,
+      PAGES = `${API_WP}/pages`;
+
+    d.addEventListener("DOMContentLoaded", e =>{
+      getSideData();
+      getPost();
+    });
+   
+      
+    function getSideData(){
+      fetch(SITE)
+      .then(res => res.ok ? res.json() : Promise.reject(res))
+      .then(json => {
+        console.log(json);
+        $site.innerHTML = `
+          <h3>Sitio web</h3>
+          <h2>
+            <a href="${json.url}" target="_blank">${json.name}</a>
+          </h2>
+          <p>${json.description}</p>
+          <p>${json.timezone_string}</p>
+          `
+      })
+      .catch(err => {
+        console.log(err);
+        let message = err.statusText || "Ocurrio un error";
+          $site.innerHTML = `<p>Error ${err.status}: ${message}</p>`;
+      })
+    }
+
+    function getPost(){
+      fetch(POST)
+      .then(res => res.ok ? res.json() : Promise.reject(res))
+      .then(json => {
+        console.log(json);
+      })
+      .catch(err => {
+        console.log(err);
+        let message = err.statusText || "Ocurrio un error";
+          $post.innerHTML = `<p>Error ${err.status}: ${message}</p>`;
+      })
+    }
+
+
   </script>
 </body>
 
