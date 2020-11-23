@@ -1,6 +1,7 @@
 import api from '../helpers/wp_api.js'     
 import {ajax} from '../helpers/ajax.js'
 import { PostCard } from './PostCard.js';
+import { Post } from './Post.js';
 
 export async function Router(){
     const d = document,
@@ -8,7 +9,7 @@ export async function Router(){
         $main = d.getElementById("main");
 
     let {hash} = location;
-    console.log(hash);
+    // console.log(hash);
 
     $main.innerHTML = null;
 
@@ -21,7 +22,7 @@ export async function Router(){
                 posts.forEach((post) => (html += PostCard(post)));
                 $main.innerHTML = html;
             }
-        })
+        });
     } else if(hash.includes("#/search")){
         $main.innerHTML = "<h2>Sección del buscador</h2>";
         
@@ -29,9 +30,15 @@ export async function Router(){
         $main.innerHTML = "<h2>Sección de contacto</h2>";
        
     } else{
-        $main.innerHTML = "<h2>Aquí carga el contenido del post previamente seleccionado</h2>";
+        await ajax({
+            url: `${api.POST}/${localStorage.getItem("wpPostId")}`,
+            cbSuccess: (post) => {
+                console.log(post);
+                $main.innerHTML = Post(post);
+            }
+        });
+        //$main.innerHTML = "<h2>Aquí carga el contenido del post previamente seleccionado</h2>";
        
     }
-
     d.querySelector(".loader").style.display="none";
 }
