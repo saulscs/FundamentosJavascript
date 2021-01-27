@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Componentes con estado</title>
+</head>
+<body>
+    <h1>Componentes con estado</h1>
+    <form id="todo-form">
+        <input type="text" id="todo-item" placeholder="Tarea por hacer">
+        <input type="submit" value="Agregar">
+        <h2>Listas de tareas</h2>
+        <ul id="todo-list"></ul> 
+    </form>
+    <script>
+        const d = document;
+           
+            
+        //El state
+        const state = {
+            todoList: []
+        }
+
+        //Template UI
+        const template = () => {
+            if(template.data.todoList.length <1){
+                return `<p>Lista sin tareas por hacer</p>`
+            }
+            let todos = template.data .todoList.map(item => `<li>${item}<li>`).join("");
+            return todos;  
+        }
+
+        //Agregar state al template que genera el componente de UI (state local)
+
+        template.data = {
+            todoList: []
+        }
+
+        //Render de UI
+
+        const render = () => {
+            //Estado global
+            console.log(state);
+            //Estado local
+            console.log(template.data);
+            const $list = d.getElementById("todo-list");
+            if(!$list) return;
+            $list.innerHTML = template();
+        }
+
+        //Actualizar el state de forma reactiva
+        const setState = obj => {
+            for(let key in obj){
+                if(template.data.hasOwnProperty(key)){
+                    template.data[key] = obj[key];
+                }
+            }
+            render();
+        }
+
+        //Obtenemos una copia inmutable del state
+        const getState = () => JSON.parse(JSON.stringify(template.data));
+        
+        d.addEventListener("DOMContentLoaded", render);
+
+        //Estableciendo valores por defecto al state
+
+        setState({
+            todoList: ["Tarea 1", "Tarea 2", "Tarea 3"],
+            nombre: "Jon"
+        });
+
+        //Estado mutable, porque permite modificar el estado directamente
+        // creando una copia del objeto y agregando otro elemento.
+        const items = getState();
+        items.todoList.push("Tarea 4");
+        console.log("Estado Inmutable", state);
+
+        d.addEventListener("submit", e => {
+            if(!e.target.matches("#todo-form")) return false;
+
+            e.preventDefault();
+
+            const $item = d.getElementById("todo-item");
+
+            if (!$item)return;
+
+            //Actualizar el state de forma reactiva
+            const lastState = getState();
+            lastState.todoList.push($item.value);
+            setState({todoList: lastState.todoList});
+            
+            //Limpiar el input
+            $item.value="";
+            $item.focus();
+        });
+        
+    </script>
+</body>
+</html>
